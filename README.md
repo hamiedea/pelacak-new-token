@@ -40,6 +40,7 @@ pnpm pkg set scripts.dev="tsx monitor.ts"
 pnpm pkg set scripts.start="node --env-file=.env --enable-source-maps --no-warnings --loader tsx ./monitor.ts"
 ```
 ### 8. Buat file `.env`
+masukan RPC
 ``` bash
 cat > .env << 'EOF'
   # Wajib
