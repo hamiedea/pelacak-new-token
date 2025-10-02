@@ -20,22 +20,26 @@ node -v && pnpm -v
 ```
 ### 3. buat atau masuk ke dalam folder !!
 
-### 4. Inisialisasi proyek dan TypeScript
+### 4. download script
+``` bash
+wget https://raw.githubusercontent.com/hamiedea/pelacak-new-token/main/monitor.ts
+```
+### 5. Inisialisasi proyek dan TypeScript
 ``` bash
 pnpm init
 pnpm add -D typescript tsx @types/node
 pnpm tsc --init --target ES2020 --module ESNext --moduleResolution Node --outDir dist --rootDir .
 ```
-### 5. Pasang dependensi runtime
+### 6. Pasang dependensi runtime
 ``` bash
 pnpm add @solana/web3.js @solana/spl-token p-limit dotenv
 ```
-### 6. Tambah skrip ke `package.json`
+### 7. Tambah skrip ke `package.json`
 ``` bash
 pnpm pkg set scripts.dev="tsx monitor.ts"
 pnpm pkg set scripts.start="node --env-file=.env --enable-source-maps --no-warnings --loader tsx ./monitor.ts"
 ```
-### 7. Buat file `.env`
+### 8. Buat file `.env`
 ``` bash
 cat > .env << 'EOF'
   # Wajib
@@ -46,10 +50,6 @@ CREATOR=
 SIG_PAGE_CONCURRENCY=8
 TX_CONCURRENCY=8
 EOF
-```
-### 8. download script
-``` bash
-xxx
 ```
 ### 9. jalankan script
 ``` bash
